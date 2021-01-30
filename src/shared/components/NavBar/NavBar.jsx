@@ -16,7 +16,7 @@ export default function NavBar() {
       </Link>
 
       <Link className="nav-link got-font" to="/chronology">
-        Cronología
+        Cronologia
       </Link>
     </nav>
   );
