@@ -1,0 +1,21 @@
+.nav {
+  width: 100vw;
+  padding: 5vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: absolute;
+  top: 85vh;
+
+  .nav-link {
+    display: flex;
+
+    font-family: 'GameOfThronesFont';
+    font-size: 2rem;
+
+    text-decoration: none;
+    color: white;
+  }
+}

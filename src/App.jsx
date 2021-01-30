@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Importing the shared components
 import NavBar from './shared/components/NavBar/NavBar';
-import Footer from './shared/components/Footer/Footer';
 
 // Importing the pages
 import CharactersPage from './pages/CharactersPage/CharactersPage';
 import HousesPage from './pages/HousesPage/HousesPage';
 import HomePage from './pages/HomePage/HomePage';
+import ChronologyPage from './pages/ChronologyPage/ChronologyPage';
 
 // Stylesheet
 import './App.scss';
@@ -28,12 +28,14 @@ function App() {
             <HousesPage />
           </Route>
 
+          <Route path="/chronology">
+            <ChronologyPage />
+          </Route>
+
           <Route exact path="/">
             <HomePage />
           </Route>
         </Switch>
-
-        <Footer></Footer>
       </Router>
     </div>
   );
