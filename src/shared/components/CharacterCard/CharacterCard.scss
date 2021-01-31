@@ -1,0 +1,31 @@
+.character-card--container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 85vw;
+  margin: auto;
+
+  .character-card {
+    margin: 0.5rem;
+    width: 15rem;
+    height: 20rem;
+
+    .character-card--title {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'GameOfThronesFont';
+      text-decoration: none;
+
+      position: relative;
+      top: 19rem;
+    }
+
+    .character-card--image {
+      width: 15rem;
+      height: 20rem;
+
+      object-fit: cover;
+    }
+  }
+}
