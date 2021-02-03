@@ -7,6 +7,7 @@ import 'simplebar/dist/simplebar.min.css';
 import CharacterCard from '../../shared/components/CharacterCard/CharacterCard';
 
 import './CharactersPage.scss';
+import '../../index.scss';
 
 let allCharacters = [];
 

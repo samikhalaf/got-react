@@ -10,6 +10,7 @@ import './DetailCharacter.scss';
 
 export default function DetailCharacter() {
   const [character, setCharacter] = useState([useParams().character]);
+  console.log(useParams().character);
 
   useEffect(() => {
     axios
