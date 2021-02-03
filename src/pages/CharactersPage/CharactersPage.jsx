@@ -8,6 +8,7 @@ import CharacterCard from '../../shared/components/CharacterCard/CharacterCard';
 
 import './CharactersPage.scss';
 import '../../index.scss';
+import NavBar from '../../shared/components/NavBar/NavBar';
 
 let allCharacters = [];
 
@@ -27,10 +28,13 @@ export default function CharactersPage() {
   }, []);
 
   return (
-    <SimpleBar style={{ maxHeight: 950 }}>
-      <div className="character-container">
-        <CharacterCard characters={characters} />
-      </div>
-    </SimpleBar>
+    <div className="character-page">
+      <SimpleBar style={{ maxHeight: 950 }}>
+        <div className="character-container">
+          <CharacterCard characters={characters} />
+        </div>
+      </SimpleBar>
+      <NavBar />
+    </div>
   );
 }

@@ -7,6 +7,7 @@ import 'simplebar/dist/simplebar.min.css';
 import HousesCard from '../../shared/components/HousesCard/HousesCard';
 
 import './HousesPage.scss';
+import NavBar from '../../shared/components/NavBar/NavBar';
 
 let allHouses = [];
 
@@ -28,10 +29,13 @@ export default function HousesPage() {
   console.log(allHouses);
 
   return (
-    <SimpleBar style={{ maxHeight: 950 }}>
-      <div className="houses-container">
-        <HousesCard houses={houses} />
-      </div>
-    </SimpleBar>
+    <div className="houses-page">
+      <SimpleBar style={{ maxHeight: 950 }}>
+        <div className="houses-container">
+          <HousesCard houses={houses} />
+        </div>
+      </SimpleBar>
+      <NavBar />
+    </div>
   );
 }

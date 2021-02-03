@@ -10,7 +10,7 @@ import './DetailCharacter.scss';
 
 export default function DetailCharacter() {
   const [character, setCharacter] = useState([useParams().character]);
-  console.log(useParams().character);
+  console.log(useParams());
 
   useEffect(() => {
     axios
@@ -25,59 +25,61 @@ export default function DetailCharacter() {
   }, []);
 
   return (
-    <SimpleBar style={{ maxHeight: 950 }}>
-      <div className="detail-container">
-        <div className="detail-header">
-          <img className="detail-header--image" src={character.image} alt={character.name} />
-          <h3 className="detail-header--name">{character.name}</h3>
+    <div className="detail-container">
+      <div className="detail-header">
+        <img className="detail-header--image" src={character.image} alt={character.name} />
+        <h3 className="detail-header--name got-font">{character.name}</h3>
+      </div>
+
+      <div className="detail-data">
+        
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">{character.house}</h3>
+          <img src="" alt="" />
         </div>
 
-        <div className="detail-data">
-          <div className="data-house">
-            <img src="" alt="" />
-            <p>{character.house}</p>
-          </div>
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Alianzas</h3>
 
-          <div className="data-allegiances">
-            <h3 className="detail-data--title">Alianzas</h3>
+          {character.allegiances?.map((alleg, index) => (
+            <p>{alleg}</p>
+          ))}
+        </div>
 
-            {character.allegiances?.map((alleg, index) => (
-              <p>{alleg}</p>
-            ))}
-          </div>
-
-          <div className="data-appearances">
-            <h3 className="detail-data--title">Apariciones</h3>
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Apariciones</h3>
+          <SimpleBar style={{ maxHeight: 300 }}>
             {character.appearances?.map((appear, index) => (
-              <p>{appear}</p>
+              <p>- {appear}</p>
             ))}
-          </div>
+          </SimpleBar>
+        </div>
 
-          <div className="data-father">
-            <h3 className="detail-data--title">Padre</h3>
-            <p>{character.father}</p>
-          </div>
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Padre</h3>
+          <p>{character.father}</p>
+        </div>
 
-          <div className="data-mother">
-            <h3 className="detail-data--title">Madre</h3>
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Madre</h3>
 
-            <p>{character.mother}</p>
-          </div>
+          <p>{character.mother}</p>
+        </div>
 
-          <div className="data-descents">
-            <h3 className="detail-data--title">Descendientes</h3>
-            <p>ni puta idea</p>
-          </div>
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Descendientes</h3>
+          <p>ni puta idea</p>
+        </div>
 
-          <div className="data-titles">
-            <h3 className="detail-data--title">Titulos</h3>
-
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Titulos</h3>
+          <SimpleBar style={{ maxHeight: 300 }}>
             {character.titles?.map((title, index) => (
               <p>{title}</p>
             ))}
-          </div>
+          </SimpleBar>
         </div>
       </div>
-    </SimpleBar>
+    </div>
   );
 }

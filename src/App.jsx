@@ -18,8 +18,7 @@ function App() {
   return (
     <div>
       <Router>
-        <NavBar />
-
+        
         <Switch>
           <Route path="/characters">
             <CharactersPage />

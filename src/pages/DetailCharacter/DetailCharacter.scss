@@ -13,15 +13,23 @@
     }
 
     .detail-header--name {
+      font-size: 2rem;
       margin: 1rem;
     }
   }
 
   .detail-data {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     margin: 2rem;
+
+    .data-block {
+      text-align: center;
+
+      margin: 2rem;
+      width: 10rem;
+    }
 
     .detail-data--title {
       margin: 1rem 0rem;
