@@ -1,0 +1,30 @@
+.detail-container {
+  display: flex;
+  flex-direction: column;
+
+  .detail-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .detail-header--image {
+      margin: 1.5rem;
+    }
+
+    .detail-header--name {
+      margin: 1rem;
+    }
+  }
+
+  .detail-data {
+    display: flex;
+    justify-content: space-around;
+
+    margin: 2rem;
+
+    .detail-data--title {
+      margin: 1rem 0rem;
+    }
+  }
+}

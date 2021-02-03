@@ -19,7 +19,6 @@ export default function CharactersPage() {
       .then((res) => {
         allCharacters = res.data;
         setCharacters(allCharacters);
-        console.log(allCharacters);
       })
       .catch((error) => {
         console.log(error);

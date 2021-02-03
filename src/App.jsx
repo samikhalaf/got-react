@@ -12,6 +12,7 @@ import ChronologyPage from './pages/ChronologyPage/ChronologyPage';
 
 // Stylesheet
 import './App.scss';
+import DetailCharacter from './pages/DetailCharacter/DetailCharacter';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
         <Switch>
           <Route path="/characters">
             <CharactersPage />
+          </Route>
+
+          <Route path="/character/:character" component={DetailCharacter}>
+            <DetailCharacter />
           </Route>
 
           <Route path="/houses">
@@ -39,7 +44,6 @@ function App() {
           <Route path="/">
             <HomePage />
           </Route>
-          
         </Switch>
       </Router>
     </div>
