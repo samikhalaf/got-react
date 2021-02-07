@@ -6,9 +6,9 @@ import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
 import '../../index.scss';
-import './DetailCharacter.scss';
+import './CharacterDetailPage.scss';
 
-export default function DetailCharacter() {
+export default function CharacterDetailPage() {
   const [character, setCharacter] = useState([useParams().character]);
   console.log(useParams());
 
@@ -32,7 +32,6 @@ export default function DetailCharacter() {
       </div>
 
       <div className="detail-data">
-        
         <div className="data-block">
           <h3 className="detail-data--title got-font">{character.house}</h3>
           <img src="" alt="" />

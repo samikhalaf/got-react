@@ -12,24 +12,28 @@ import ChronologyPage from './pages/ChronologyPage/ChronologyPage';
 
 // Stylesheet
 import './App.scss';
-import DetailCharacter from './pages/DetailCharacter/DetailCharacter';
+import CharacterDetailPage from './pages/CharacterDetailPage/CharacterDetailPage';
+import HousesDetailPage from './pages/HousesDetailPage/HousesDetailPage';
 
 function App() {
   return (
     <div>
       <Router>
-        
         <Switch>
           <Route path="/characters">
             <CharactersPage />
           </Route>
 
-          <Route path="/character/:character" component={DetailCharacter}>
-            <DetailCharacter />
+          <Route path="/character/:character" component={CharacterDetailPage}>
+            <CharacterDetailPage />
           </Route>
 
           <Route path="/houses">
             <HousesPage />
+          </Route>
+
+          <Route path="/house/:house" component={HousesDetailPage}>
+            <HousesDetailPage />
           </Route>
 
           <Route path="/chronology">
