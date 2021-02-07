@@ -1,0 +1,29 @@
+.house-card--container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 85vw;
+  margin: auto;
+
+  .house-card {
+    margin: 0.5rem;
+    width: 15rem;
+    height: 20rem;
+
+    .house-card--title {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'GameOfThronesFont';
+      text-decoration: none;
+      margin: 1rem;
+    }
+
+    .house-card--image {
+      width: 15rem;
+      height: 20rem;
+
+      object-fit: cover;
+    }
+  }
+}
