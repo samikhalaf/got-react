@@ -2,7 +2,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Importing the shared components
-import NavBar from './shared/components/NavBar/NavBar';
 
 // Importing the pages
 import CharactersPage from './pages/CharactersPage/CharactersPage';

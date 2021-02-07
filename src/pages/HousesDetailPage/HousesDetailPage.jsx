@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
-
 import '../../index.scss';
 
 import './HousesDetailPage.scss';
@@ -15,7 +12,7 @@ export default function HousesDetailPage() {
 
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_BACK_URL + `house/${house}`)
+      .get(process.env.REACT_APP_BACK_URL + `houses/${house}`)
       .then((res) => {
         setHouse(res.data);
         console.log(house);
@@ -25,59 +22,45 @@ export default function HousesDetailPage() {
       });
   }, []);
 
+  console.log(house);
+
   return (
     <div className="detail-container">
       <div className="detail-header">
-        <img className="detail-header--image" src={house.image} alt={house.name} />
-        <h3 className="detail-header--name got-font">{house.name}</h3>
+        <img className="detail-header--image" src={house[0].logoURL} alt={house[0].name} />
+        <h3 className="detail-header--name got-font">{house[0].name}</h3>
       </div>
 
       <div className="detail-data">
         <div className="data-block">
-          <h3 className="detail-data--title got-font">{house.house}</h3>
-          <img src="" alt="" />
+          <h3 className="detail-data--title got-font">Lema</h3>
+          <p>{house[0].words ? house[0].words : 'Desconocido'}</p>
+        </div>
+
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Sede</h3>
+          {house[0].seat?.map((seat, index) => (
+            <p>{seat}</p>
+          ))}
+        </div>
+
+        <div className="data-block">
+          <h3 className="detail-data--title got-font">Region</h3>
+          {house[0].region ? house[0].region.map((reg, index) => <p>{reg}</p>) : <p>Desconocida</p>}
         </div>
 
         <div className="data-block">
           <h3 className="detail-data--title got-font">Alianzas</h3>
-
-          {house.allegiances?.map((alleg, index) => (
+          {house[0].allegiance?.map((alleg, index) => (
             <p>{alleg}</p>
           ))}
         </div>
 
         <div className="data-block">
-          <h3 className="detail-data--title got-font">Apariciones</h3>
-          <SimpleBar style={{ maxHeight: 300 }}>
-            {house.appearances?.map((appear, index) => (
-              <p>- {appear}</p>
-            ))}
-          </SimpleBar>
-        </div>
-
-        <div className="data-block">
-          <h3 className="detail-data--title got-font">Padre</h3>
-          <p>{house.father}</p>
-        </div>
-
-        <div className="data-block">
-          <h3 className="detail-data--title got-font">Madre</h3>
-
-          <p>{house.mother}</p>
-        </div>
-
-        <div className="data-block">
-          <h3 className="detail-data--title got-font">Descendientes</h3>
-          <p>ni puta idea</p>
-        </div>
-
-        <div className="data-block">
-          <h3 className="detail-data--title got-font">Titulos</h3>
-          <SimpleBar style={{ maxHeight: 300 }}>
-            {house.titles?.map((title, index) => (
-              <p>{title}</p>
-            ))}
-          </SimpleBar>
+          <h3 className="detail-data--title got-font">Religiones</h3>
+          {house[0].religion?.map((relig, index) => (
+            <p>{relig ? relig : 'Desconocido'}</p>
+          ))}
         </div>
       </div>
     </div>
