@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import '../../index.scss';
-
 import './HousesDetailPage.scss';
+
+import NotFound from '../../assets/img/404.png';
 
 export default function HousesDetailPage() {
   const [house, setHouse] = useState([useParams().house]);
@@ -27,7 +28,11 @@ export default function HousesDetailPage() {
   return (
     <div className="detail-container">
       <div className="detail-header">
-        <img className="detail-header--image" src={house[0].logoURL} alt={house[0].name} />
+        <img
+          className="detail-header--image"
+          src={house[0].logoURL ? house[0].logoURL : NotFound}
+          alt={house[0].name}
+        />
         <h3 className="detail-header--name got-font">{house[0].name}</h3>
       </div>
 

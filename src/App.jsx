@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Importing the shared components
+import Header from './shared/components/Header/Header';
 
 // Importing the pages
 import CharactersPage from './pages/CharactersPage/CharactersPage';
@@ -17,6 +18,8 @@ import HousesDetailPage from './pages/HousesDetailPage/HousesDetailPage';
 function App() {
   return (
     <div>
+      <Header />
+
       <Router>
         <Switch>
           <Route path="/characters">
