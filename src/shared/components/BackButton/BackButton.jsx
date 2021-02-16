@@ -11,5 +11,9 @@ export default function BackButton() {
     history.goBack();
   }
 
-  return <button onClick={() => goBack()}>Back</button>;
+  return (
+    <button className="back-button" onClick={() => goBack()}>
+      ← BACK
+    </button>
+  );
 }
